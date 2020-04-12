@@ -1,0 +1,17 @@
+{
+    "dependencies": {
+        "chalk": "^2.4.2",
+        "cpu-stat": "^2.0.1",
+        "discord.js": "^11.5.1",
+        "dotenv": "^8.0.0",
+        "enmap": "^5.0.0",
+        "lodash": "^4.17.14",
+        "moment": "^2.24.0",
+        "moment-duration-format": "^2.3.2",
+        "ms": "^2.1.2"
+    },
+    "scripts": {
+        "dev": "nodemon main.js",
+        "start": "node main.js"
+    }
+}
