@@ -19,7 +19,7 @@ module.exports = {
             if (err) return console.log(err)
 
             const embedStats = new Discord.MessageEmbed()
-              .setAuthor('Stats', client.user.avatarURL)
+              .setAuthor('Stats', client.user.avatarURL())
               .setColor("#21b1ff")
               .addField("Uptime", `\`${moment.duration(client.uptime).format(" D [days], H [hrs], m [mins], s [secs]")}\``, true)
               .addField("Discord.js Version", `\`v${version}\``, true)
