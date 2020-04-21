@@ -33,6 +33,16 @@ module.exports = async (client, message) => {
             return message.channel.send(reply);
         }
 
+        if (command.permissions) {
+            if (typeof command.permissions == "string") {
+                if (!message.member.hasPermission(command.permissions)) {return message.reply('You don\' have permission to do this.')}
+            } else {
+                for(var i = 0; i<command.permissions.length; i++) {
+                    if (!message.member.hasPermission(command.permissions[i])) {return message.reply('You don\' have permission to do this.')}
+                }
+            }
+        }
+
         if (!cooldowns.has(command.name)) {
             cooldowns.set(command.name, new Discord.Collection());
         }

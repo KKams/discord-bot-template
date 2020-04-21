@@ -11,13 +11,14 @@ module.exports = {
     name: 'stats',
     description: 'Hello World!',
     aliases: 'statistics',
+    permissions: ['ADMINISTRATOR'],
     cooldown: 5,
     async execute(client, message, args) {
 
         cpuStat.usagePercent(async (err, percent, seconds) => {
             if (err) return console.log(err)
 
-            const embedStats = new Discord.RichEmbed()
+            const embedStats = new Discord.MessageEmbed()
               .setAuthor('Stats', client.user.avatarURL)
               .setColor("#21b1ff")
               .addField("Uptime", `\`${moment.duration(client.uptime).format(" D [days], H [hrs], m [mins], s [secs]")}\``, true)
